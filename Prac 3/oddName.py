@@ -12,12 +12,22 @@ t
 o
 n
 '''
-isValid = False
+def main():
+    isValid = False
+    name = getName()
 
-name = input('Please enter your name: ')
-while isValid == False:
-    if len(name) < 1:
-        name = input('Please enter a valid name: ')
-    else:
-       print(name[::2])
-       isValid = True
+    while isValid == False:
+        if len(name) < 1:
+            name = getName()
+        else:
+           printName(name)
+           isValid = True
+
+def getName():
+    name = input('Please enter your name: ')
+    return name
+
+def printName(name):
+    skipLength = input("Please enter a number for how many letters you would like skipped: ")
+    print(name[::int(skipLength)])
+main()
