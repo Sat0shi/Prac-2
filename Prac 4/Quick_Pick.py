@@ -6,7 +6,10 @@ def main():
 
 
 def printList(list):
-    print(''.join(str(list)))
+    listString = ''
+    for number in list:
+        listString = '{} {:>2s}'.format(listString, str(number))
+    print(listString)
 
 
 def randomGenerator(quickPicks):
